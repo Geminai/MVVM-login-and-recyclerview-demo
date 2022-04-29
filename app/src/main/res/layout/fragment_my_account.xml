@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.dvl.sigma.ui.account.MyAccountViewModel" />
+
+    </data>
+
+    <RelativeLayout
+        style="@style/loginParent"
+        android:orientation="vertical">
+
+        <ScrollView style="@style/parent">
+
+            <RelativeLayout style="@style/parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:weightSum="12">
+
+                    <LinearLayout
+                        style="@style/parent"
+                        android:layout_weight="3"
+                        android:background="@drawable/login_header_shape_bk"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            style="@style/parent"
+                            android:background="@drawable/ic_login_bk" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="@dimen/_330sdp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:orientation="vertical">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/ivProfilePic"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="@dimen/_50sdp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:src="@drawable/profile_pic_placeholder"
+                        android:text="@string/app_name"
+                        app:civ_border_width="0dp" />
+
+                    <androidx.cardview.widget.CardView
+                        style="@style/loginCard"
+                        android:layout_below="@id/ivProfilePic"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_16sdp"
+                        android:layout_marginBottom="@dimen/_16sdp"
+                        android:background="@color/whiteCardColor"
+                        android:elevation="5dp"
+                        app:cardCornerRadius="@dimen/_16sdp">
+
+                        <LinearLayout
+                            style="@style/linearParent"
+                            android:layout_gravity="center"
+                            android:padding="@dimen/_16sdp">
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/parent"
+                                android:layout_marginTop="@dimen/_16sdp">
+
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etFirstName"
+                                    style="@style/modifiedEditText"
+                                    android:hint="@string/text_first_name"
+                                    android:inputType="text"
+                                    android:maxLines="1"
+                                    android:text="@={viewmodel.firstName}" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/parent"
+                                android:layout_marginTop="@dimen/_16sdp">
+
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etLastName"
+                                    style="@style/modifiedEditText"
+                                    android:hint="@string/text_"
+                                    android:inputType="text"
+                                    android:maxLines="1"
+                                    android:text="@={viewmodel.lastName}" />
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/parent"
+                                android:layout_marginTop="@dimen/_16sdp">
+
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etCity"
+                                    style="@style/modifiedEditText"
+                                    android:hint="@string/text_city"
+                                    android:inputType="text"
+                                    android:maxLines="1"
+                                    android:text="@={viewmodel.city}" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/parent"
+                                android:layout_marginTop="@dimen/_16sdp">
+
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etPostCode"
+                                    style="@style/modifiedEditText"
+                                    android:hint="@string/text_postcode"
+                                    android:inputType="text"
+                                    android:maxLines="1"
+                                    android:text="@={viewmodel.postcode}" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+                            <com.google.android.material.textfield.TextInputLayout
+                                style="@style/parent"
+                                android:layout_marginTop="@dimen/_16sdp">
+
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/etContactNumber"
+                                    style="@style/modifiedEditText"
+                                    android:hint="@string/text_contact_number"
+                                    android:inputType="text"
+                                    android:maxLines="1"
+                                    android:text="@={viewmodel.contactNumber}" />
+
+                            </com.google.android.material.textfield.TextInputLayout>
+
+
+                            <androidx.appcompat.widget.AppCompatButton
+                                android:id="@+id/btnUpdate"
+                                style="@style/loginButton"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="@dimen/_16sdp"
+                                android:text="@string/text_update" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="30dp"
+                    android:src="@drawable/ic_baseline_close_24"
+                    android:visibility="gone"
+                    app:tint="@color/white" />
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+</layout>
+
+
